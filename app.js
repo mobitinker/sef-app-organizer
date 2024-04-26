@@ -1,8 +1,6 @@
 "use strict";
 
 // Core Node.js modules
-//const fs = require('fs');
-//const path = require('path');
 
 // NPM modules
 //TODO possibly import js file to make deprecation error go aways
