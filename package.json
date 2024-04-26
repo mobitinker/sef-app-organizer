@@ -1,0 +1,20 @@
+{
+  "name": "sef-app-organizer",
+  "version": "1.0.0",
+  "description": "Moves Canvas assignment submissions to student-specific Google Docs folders.",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "author": "Mark Murphy",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "axios": "^1.6.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "googleapis": "^131.0.0",
+    "multer": "^1.4.5-lts.1",
+    "punycode": "^2.3.1"
+  }
+}
