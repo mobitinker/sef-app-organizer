@@ -13,7 +13,7 @@ import fs from 'fs';
 const canvasDomain = 'https://sultanschools.instructure.com';
 //const canvasDomain = 'https://sultanschools.beta.instructure.com';
 const apiToken = '13475~QD9FM8Z0PDpvwc7YcgJGI7DHsHvDynQbZG5LNxmRGW2woXi0mdPALvuhTSdbP080'; 
-const courseId = '11567'; //SEF Scholarship 2024
+const courseId = '13030'; //SEF Scholarship 2025
 
 /*
 const assignmentIds = [
@@ -46,7 +46,7 @@ async function getAssignmentsForCourse() {
 // Function to get all submissions for a specific assignment
 async function getSubmissionsForAssignment(courseId, assignment) {
     try {
-        console.log(`****Getting submissions for assignment ${assignment.name}`);
+        //console.log(`****Getting submissions for assignment ${assignment.name}`);
 
         const response = await axios.get(`${canvasDomain}/api/v1/courses/${courseId}/assignments/${assignment.id}/submissions?include[]=user&include[]=attachments&per_page=100`, {
             headers: { Authorization: `Bearer ${apiToken}` }
@@ -120,8 +120,10 @@ async function downloadFile(url, filePath) {
           for (let file of submission.attachments) {
             // We assume file naming includes the assignment or another unique identifier
             const filePath = path.join(studentFolder, createFileName(file, assignment, f));
+            //Uncomment below to actually download the file
             await downloadFile(file.url, filePath);
             console.log(`Downloaded '${file.display_name}' to '${filePath}'`);
+            //console.log(`'${studentName}','${assignment.name.trim()}',${submission.submitted_at}`);
             f++;
           }
         }
